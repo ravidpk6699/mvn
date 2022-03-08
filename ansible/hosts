@@ -1,0 +1,2 @@
+[prod-server]
+prod-server ansible_ssh_host=20.124.102.123

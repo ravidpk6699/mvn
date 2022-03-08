@@ -1,0 +1,8 @@
+---
+- hosts: prod-server
+  become: azureuser
+  become: true
+  tasks:
+    - name: deploy build to tomcat
+      shell: wget 'http://20.212.18.14:8081/repository/projectoss-release/Demoapp/WebApp/5.1.1/WebApp-5.1.1.war' -O /opt/tomcat/webapps/WebApp.war
+
