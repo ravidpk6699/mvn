@@ -45,10 +45,13 @@ pipeline {
 			ansiblePlaybook become: tru, becomeUser: 'azureuser', credentialsId: 'ansible', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
 		}
 	}
+	 stage ("parameters")
+	 steps {
 		parameters {
   buildSelector defaultSelector: lastSuccessful(), description: 'adding a step to build it successfully ', name: 'buildsuccessful'
 }
 	}
+	  }
 	  }
 	  
 	  
