@@ -47,8 +47,7 @@ pipeline {
 	}
 	 stage ("parameters"){
 	 steps {
-		parameters {
-  buildSelector defaultSelector: lastSuccessful(), description: 'adding a step to build it successfully ', name: 'buildsuccessful'
+		parameters "buildSelector defaultSelector: lastSuccessful(), description: 'adding a step to build it successfully ', name: 'buildsuccessful'"
 }
 	}
 	  }
