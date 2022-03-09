@@ -14,6 +14,12 @@ pipeline {
                 echo("Build version: ${VERSION}") 
       }
       }
+	      stage("build number") {
+		    steps {
+                 echo "Build_Number = ${env.Build_Number}"
+                 sh 'echo Build_Number = $Build_Number'
+}
+}				 
 	    stage('sonarqube analysis') {
 		     steps{
 			      withSonarQubeEnv('sonarqube') {
