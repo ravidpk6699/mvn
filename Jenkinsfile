@@ -42,7 +42,7 @@ pipeline {
 	  }
 	  stage('Deploy to prod'){
 		    steps{
-			ansiblePlaybook become: tru, becomeUser: 'azureuser', credentialsId: 'ansible', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
+			ansiblePlaybook become: true, becomeUser: 'azureuser', credentialsId: 'ansible', installation: 'ansible', inventory: 'ansible/hosts', playbook: 'ansible/deploy.yaml'
 		}
 	}
 	 stage ("parameters"){
